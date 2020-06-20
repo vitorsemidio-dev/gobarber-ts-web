@@ -20,6 +20,8 @@ const SignUp: React.FC = () => {
   const handleSubmit = useCallback(async (data: any) => {
     console.log(data);
     try {
+      formRef.current?.setErrors({});
+
       const schema = Yup.object().shape({
         name: Yup.string().required('Nome é obrigatório'),
         email: Yup.string()
