@@ -11,9 +11,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({ icon: Icon, ...rest }) => (
   <Container>
     {Icon && <Icon size={20} />}
-    <input {...rest}/>
+    <input {...rest} />
   </Container>
-)
-
+);
 
 export default Input;

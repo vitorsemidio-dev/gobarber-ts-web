@@ -9,8 +9,6 @@ const App: React.FC = () => (
     <SignIn />
     <GlobalStyle />
   </>
-  
 );
-
 
 export default App;
