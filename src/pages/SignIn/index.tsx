@@ -28,8 +28,6 @@ const SignIn: React.FC = () => (
     </Content>
 
     <Background />
-    <h1>SignIn</h1>
-
   </Container>
 )
 
