@@ -62,7 +62,17 @@ export const Container = styled.div<ContainerProps>`
 export const Error = styled(Tooltip)`
   height: 20px;
   margin-left: 16px;
+
   svg {
     margin: 0;
+  }
+
+  span {
+    background: #f53030;
+    color: #fff;
+
+    &::before {
+      border-color: #f53030 transparent;
+    }
   }
 `;
