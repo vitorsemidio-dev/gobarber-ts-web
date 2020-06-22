@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface ToastProps {
+  type?: string;
+}
 
 export const Container = styled.div`
   position: absolute;
@@ -8,7 +12,7 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
-export const Toast = styled.div`
+export const Toast = styled.div<ToastProps>`
   width: 360px;
 
   position: relative;
@@ -20,6 +24,20 @@ export const Toast = styled.div`
 
   background: #ebf8ff;
   color: #3172b7;
+
+  ${(props) =>
+    props.type === 'success' &&
+    css`
+      background: #e6fffa;
+      color: #2e656a;
+    `}
+
+  ${(props) =>
+    props.type === 'error' &&
+    css`
+      background: #fddede;
+      color: #c53030;
+    `}
 
   > svg {
     margin: 4px 12px 0 0;
