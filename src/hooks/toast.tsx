@@ -4,7 +4,7 @@ import { uuid } from 'uuidv4';
 import ToastContainer from '../components/ToastContainer';
 
 interface ToastContextData {
-  addToast(): void;
+  addToast(message: Omit<ToastMessage, 'id'>): void;
   removeToast(): void;
 }
 
