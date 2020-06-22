@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useCallback } from 'react';
 
+import ToastContainer from '../components/ToastContainer';
+
 interface ToastContextData {
   addToast(): void;
   removeToast(): void;
@@ -22,6 +24,8 @@ const ToastProvider: React.FC = ({ children }) => {
       }}
     >
       {children}
+
+      <ToastContainer />
     </ToastContext.Provider>
   );
 };

@@ -7,15 +7,11 @@ import GlobalStyle from './styles/global';
 
 import AppProvider from './hooks';
 
-import ToastContainer from './components/ToastContainer';
-
 const App: React.FC = () => (
   <>
     <AppProvider>
       <SignIn />
     </AppProvider>
-
-    <ToastContainer />
 
     <GlobalStyle />
   </>
