@@ -17,6 +17,7 @@ const toastTypeVariations = {
 
 interface ToastProps {
   type?: 'success' | 'error' | 'info';
+  hasDescription: boolean;
 }
 
 export const Container = styled.div`
@@ -36,6 +37,10 @@ export const Toast = styled.div<ToastProps>`
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 
   display: flex;
+
+  & + div {
+    margin-top: 8px;
+  }
 
   ${(props) => toastTypeVariations[props.type || 'info']}
 
@@ -63,4 +68,13 @@ export const Toast = styled.div<ToastProps>`
     background: transparent;
     color: inherit;
   }
+
+  ${(props) =>
+    !props.hasDescription &&
+    css`
+      align-items: center;
+      svg {
+        margin-top: 0;
+      }
+    `}
 `;
