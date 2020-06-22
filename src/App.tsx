@@ -13,7 +13,9 @@ import ToastContainer from './components/ToastContainer';
 const App: React.FC = () => (
   <>
     <AuthProvider>
-      <SignIn />
+      <ToastProvider>
+        <SignIn />
+      </ToastProvider>
     </AuthProvider>
 
     <ToastContainer />
