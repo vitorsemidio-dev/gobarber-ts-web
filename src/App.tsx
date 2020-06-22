@@ -5,7 +5,8 @@ import SignIn from './pages/SignIn';
 
 import GlobalStyle from './styles/global';
 
-import { AuthProvider } from './hooks/AuthContext';
+import { AuthProvider } from './hooks/auth';
+import { ToastProvider } from './hooks/toast';
 
 import ToastContainer from './components/ToastContainer';
 
