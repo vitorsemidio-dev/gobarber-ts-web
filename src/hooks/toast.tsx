@@ -8,7 +8,7 @@ interface ToastContextData {
   removeToast(): void;
 }
 
-interface ToastMessage {
+export interface ToastMessage {
   id: string;
   type?: 'success' | 'error' | 'info';
   title: string;
@@ -47,7 +47,7 @@ const ToastProvider: React.FC = ({ children }) => {
     >
       {children}
 
-      <ToastContainer />
+      <ToastContainer messages={messages} />
     </ToastContext.Provider>
   );
 };
