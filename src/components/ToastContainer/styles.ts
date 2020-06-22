@@ -1,7 +1,22 @@
 import styled, { css } from 'styled-components';
 
+const toastTypeVariations = {
+  info: css`
+    background: #ebf8ff;
+    color: #3172b7;
+  `,
+  success: css`
+    background: #e6fffa;
+    color: #2e656a;
+  `,
+  error: css`
+    background: #fddede;
+    color: #c53030;
+  `,
+};
+
 interface ToastProps {
-  type?: string;
+  type?: 'success' | 'error' | 'info';
 }
 
 export const Container = styled.div`
@@ -22,22 +37,7 @@ export const Toast = styled.div<ToastProps>`
 
   display: flex;
 
-  background: #ebf8ff;
-  color: #3172b7;
-
-  ${(props) =>
-    props.type === 'success' &&
-    css`
-      background: #e6fffa;
-      color: #2e656a;
-    `}
-
-  ${(props) =>
-    props.type === 'error' &&
-    css`
-      background: #fddede;
-      color: #c53030;
-    `}
+  ${(props) => toastTypeVariations[props.type || 'info']}
 
   > svg {
     margin: 4px 12px 0 0;
