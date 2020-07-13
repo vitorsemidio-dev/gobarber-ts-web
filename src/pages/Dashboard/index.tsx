@@ -11,23 +11,23 @@ const Dashboard: React.FC = () => {
       <Header>
         <HeaderContent>
           <img src={logo} alt="Go Barber" />
+
+          <Profile>
+            <img
+              src="https://api.adorable.io/avatars/50/abott@adorable.png"
+              alt="Avatar"
+            />
+
+            <div>
+              <span>Bem-vindo,</span>
+              <strong>Usuário GoBarber</strong>
+            </div>
+          </Profile>
+
+          <button type="button">
+            <FiPower />
+          </button>
         </HeaderContent>
-
-        <Profile>
-          <img
-            src="https://api.adorable.io/avatars/50/abott@adorable.png"
-            alt="Avatar"
-          />
-
-          <div>
-            <span>Bem-vindo,</span>
-            <strong>Usuário GoBarber</strong>
-          </div>
-        </Profile>
-
-        <button type="button">
-          <FiPower />;
-        </button>
       </Header>
     </Container>
   );
