@@ -22,6 +22,16 @@ import {
   Calendar,
 } from './styles';
 
+interface Appointment {
+  id: string;
+  name: string;
+  date: string;
+  user: {
+    name: string;
+    avatar_url: string;
+  };
+}
+
 interface MonthAvailability {
   day: number;
   available: boolean;
@@ -35,6 +45,7 @@ const Dashboard: React.FC = () => {
   const [monthAvailability, setMonthAvailability] = useState<
     MonthAvailability[]
   >([]);
+  const [appointments, setAppointments] = useState<Appointment[]>([]);
 
   useEffect(() => {
     api
@@ -48,6 +59,21 @@ const Dashboard: React.FC = () => {
         setMonthAvailability(response.data);
       });
   }, [currentMonth, user.id]);
+
+  useEffect(() => {
+    api
+      .get<Appointment[]>('/appointments/me', {
+        params: {
+          year: selectedDate.getFullYear(),
+          month: selectedDate.getMonth() + 1,
+          day: selectedDate.getDate(),
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        setAppointments(response.data);
+      });
+  }, [selectedDate]);
 
   const handleDateChange = useCallback(
     (day: Date, modifiers: DayModifiers) => {

@@ -111,6 +111,7 @@ export const NextAppointment = styled.div`
     align-items: center;
     padding: 16px 24px;
     margin-top: 24px;
+    border-radius: 16px;
 
     position: relative;
 
