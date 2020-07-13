@@ -89,6 +89,7 @@ export const AvatarInput = styled.div`
     background: #ff9000;
     border: 0;
     border-radius: 50%;
+    cursor: pointer;
 
     /* Flex */
     display: flex;
