@@ -2,10 +2,13 @@ import React from 'react';
 import { FiPower } from 'react-icons/fi';
 
 import logo from '../../assets/logo.svg';
+import { useAuth } from '../../hooks/auth';
 
 import { Container, Header, HeaderContent, Profile } from './styles';
 
 const Dashboard: React.FC = () => {
+  const { signOut, user } = useAuth();
+
   return (
     <Container>
       <Header>
@@ -14,17 +17,20 @@ const Dashboard: React.FC = () => {
 
           <Profile>
             <img
-              src="https://api.adorable.io/avatars/50/abott@adorable.png"
+              src={
+                user.avatar_url ||
+                'https://api.adorable.io/avatars/50/abott@adorable.png'
+              }
               alt="Avatar"
             />
 
             <div>
               <span>Bem-vindo,</span>
-              <strong>Usuário GoBarber</strong>
+              <strong>{user.name}</strong>
             </div>
           </Profile>
 
-          <button type="button">
+          <button onClick={signOut} type="button">
             <FiPower />
           </button>
         </HeaderContent>
