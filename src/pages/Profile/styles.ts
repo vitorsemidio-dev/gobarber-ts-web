@@ -75,7 +75,7 @@ export const AvatarInput = styled.div`
     border-radius: 50%;
   }
 
-  button {
+  label {
     /* Position */
     position: absolute;
     right: 0;
@@ -100,6 +100,10 @@ export const AvatarInput = styled.div`
       width: 20px;
       height: 20px;
       color: #312e38;
+    }
+
+    input {
+      display: none;
     }
 
     /* Animation */
