@@ -12,6 +12,8 @@ import {
   Content,
   Schedule,
   NextAppointment,
+  Section,
+  Appointment,
   Calendar,
 } from './styles';
 
@@ -70,6 +72,74 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                11:00
+              </span>
+
+              <div>
+                <img
+                  src="https://api.adorable.io/avatars/50/abott@adorable.png"
+                  alt="Avatar"
+                />
+                <strong>Usuário GoBarber</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                12:00
+              </span>
+
+              <div>
+                <img
+                  src="https://api.adorable.io/avatars/50/abott@adorable.png"
+                  alt="Avatar"
+                />
+                <strong>Usuário GoBarber</strong>
+              </div>
+            </Appointment>
+          </Section>
+
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                14:00
+              </span>
+
+              <div>
+                <img
+                  src="https://api.adorable.io/avatars/50/abott@adorable.png"
+                  alt="Avatar"
+                />
+                <strong>Usuário GoBarber</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                15:00
+              </span>
+
+              <div>
+                <img
+                  src="https://api.adorable.io/avatars/50/abott@adorable.png"
+                  alt="Avatar"
+                />
+                <strong>Usuário GoBarber</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
