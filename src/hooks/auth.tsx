@@ -21,6 +21,7 @@ interface SignInCredentials {
 interface User {
   id: string;
   avatar_url: string;
+  email: string;
   name: string;
 }
 
