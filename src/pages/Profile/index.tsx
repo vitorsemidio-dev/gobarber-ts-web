@@ -81,6 +81,7 @@ const Profile: React.FC = () => {
           <Input name="email" icon={FiMail} placeholder="E-mail" />
 
           <Input
+            containerStyle={{ marginTop: 24 }}
             name="old_password"
             icon={FiLock}
             type="password"
