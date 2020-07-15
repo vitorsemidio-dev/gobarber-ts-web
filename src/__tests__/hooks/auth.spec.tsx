@@ -96,4 +96,30 @@ describe('Auth hook', () => {
     expect(removeItemSpy).toHaveBeenCalledTimes(2);
     expect(result.current.user).toBeUndefined();
   });
+
+  it('should be able to update user data', () => {
+    const setItemSpy = jest.spyOn(Storage.prototype, 'setItem');
+
+    const { result } = renderHook(() => useAuth(), {
+      wrapper: AuthProvider,
+    });
+
+    const user = {
+      id: 'id-uuid',
+      name: 'John Doe',
+      email: 'johndoe@mail.com',
+      avatar_url: 'johndoe-avatar.jpg',
+    };
+
+    act(() => {
+      result.current.updateUser(user);
+    });
+
+    expect(setItemSpy).toHaveBeenCalledWith(
+      '@GoBarber:user',
+      JSON.stringify(user),
+    );
+
+    expect(result.current.user).toEqual(user);
+  });
 });
