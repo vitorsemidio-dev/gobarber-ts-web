@@ -40,4 +40,30 @@ describe('Input component', () => {
       expect(containerElement).toHaveStyle('color: #ff9000');
     });
   });
+
+  it('should render the same style before input focus and after input blur', async () => {
+    const { getByPlaceholderText, getByTestId } = render(
+      <Input name="email" placeholder="E-mail" />,
+    );
+
+    const inputElement = getByPlaceholderText('E-mail');
+    const containerElement = getByTestId('input-container');
+
+    expect(containerElement).toHaveStyle('border-color: #232129');
+    expect(containerElement).toHaveStyle('color: #666360');
+
+    fireEvent.focus(inputElement);
+
+    await wait(() => {
+      expect(containerElement).toHaveStyle('border-color: #ff9000');
+      expect(containerElement).toHaveStyle('color: #ff9000');
+    });
+
+    fireEvent.blur(inputElement);
+
+    await wait(() => {
+      expect(containerElement).toHaveStyle('border-color: #232129');
+      expect(containerElement).toHaveStyle('color: #666360');
+    });
+  });
 });
